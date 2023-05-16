@@ -1,0 +1,734 @@
+/* Start Global Rules */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* body color */
+    --first-color: #372972;
+    --second-color: #2a2155;
+
+    /* for btns */
+    --third-color: #711a94;
+    --fourth-color: #5400ea;
+    /* for BMW's card */
+    --fifth-color: #251652;
+    --sixth-color: #4d216f;
+
+    /* for card color */
+    --card-color: #3b2c7c;
+
+    --section-padding: 60px;
+    --parent-padding: 10px
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Comme', sans-serif;
+    background-color: #372972;
+    background-image: linear-gradient(to right, var(--first-color), var(--second-color));
+    min-height: 100vh;
+    color: #fff;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+/* Component */
+
+.main-heading h2 {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 2.5em;
+}
+
+.main-heading p {
+    font-size: 15px;
+    margin-top: 1em;
+}
+
+/* End Component */
+
+/* Media */
+/* Small */
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+/* Medium */
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+/* Large */
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+/* X-Large */
+@media (min-width: 1400px) {
+    .container {
+        width: 1370px;
+    }
+}
+
+/* End Global Rules  */
+
+/* Start Header */
+.header {
+    padding: 15px var(--parent-padding);
+    /* position: relative; */
+}
+
+.header .container {
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+}
+
+.header .logo {
+    font-weight: 800;
+    font-size: 1.5em;
+}
+
+
+/*------------------*/
+.header .search:first-of-type {
+    display: none;
+}
+
+.header i:hover:first-of-type+.search {
+    cursor: pointer;
+    display: block;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    left: 0;
+    margin-top: 15px;
+    outline: none;
+    color: #fff;
+    background-image: linear-gradient(to left, var(--first-color), var(--second-color));
+    border: 2px solid #372972;
+    height: 2em;
+    padding-left: 10px;
+    caret-color: #711a94;
+}
+
+.header .search::placeholder {
+    text-transform: capitalize;
+}
+
+/*------------------*/
+.header ul li {
+    padding-left: 15px;
+    padding-right: 15px;
+    text-transform: capitalize;
+}
+
+@media (max-width:992px) {
+    .header ul {
+        display: none;
+    }
+
+    .header .burger:hover+ul {
+        position: absolute;
+        display: flex;
+        top: 100%;
+        right: 0;
+        text-align: center;
+        background-image: linear-gradient(to left, var(--first-color), var(--second-color));
+        padding: 15px 0;
+        border-radius: 5px;
+        width: 100%;
+        margin-top: 15px;
+    }
+
+    .header .nav i {
+        padding-right: 15px;
+    }
+}
+
+@media (max-width: 430px) {
+    .header ul {
+        display: none;
+    }
+
+    .header .burger:hover+ul {
+        position: absolute;
+        left: 0;
+        display: block;
+        text-align: left;
+        top: 100%;
+        background-image: linear-gradient(to left, var(--first-color), var(--second-color));
+        padding: 10px 0;
+        width: 100%;
+        margin-top: 10px;
+        border-radius: 5px;
+    }
+
+    .header ul li:not(:last-of-type) {
+        margin-bottom: 10px;
+    }
+
+    .header .nav i {
+        padding-right: 15px;
+    }
+
+    .header .signinbtn {
+        font-size: 13px;
+        padding: 10px 15px;
+    }
+}
+
+@media (min-width:992px) {
+    .header .burger {
+        display: none;
+    }
+}
+
+.header .nav .signinbtn {
+    background-image: linear-gradient(to right, var(--third-color), var(--fourth-color));
+    padding: 8px 27px;
+    border-radius: 5px;
+    text-transform: capitalize;
+    box-shadow: 0px 0px 2px 0px inset #222;
+}
+
+.header .nav i {
+    font-size: 20px;
+}
+
+/* End Header */
+
+
+/* Start Landing */
+.landing {
+    padding-left: var(--parent-padding);
+    padding-right: var(--parent-padding);
+}
+
+.landing .container {
+    padding-top: var(--section-padding);
+    padding-bottom: calc(var(--section-padding) - 2em);
+    justify-content: space-between;
+}
+
+.landing .text {
+    width: 470px;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.landing .image img {
+    max-width: 100%;
+    width: 700px;
+}
+
+.landing .icons {
+    gap: 3em;
+    margin-top: 2em;
+}
+
+@media (max-width:345px) {
+    .landing .icons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1em;
+    }
+}
+
+.landing .icons .box {
+    background-color: var(--fifth-color);
+    padding: 10px 20px;
+}
+
+.landing .icons .box p {
+    text-transform: capitalize;
+    padding-top: 10px;
+}
+
+@media (max-width:1200px) {
+    .landing .container {
+        display: flex;
+        flex-direction: column;
+        gap: 3em;
+    }
+
+    .landing .text {
+        width: 100%;
+    }
+}
+
+/* End Landing */
+
+/* Start Form  */
+form {
+    background-image: linear-gradient(to left, var(--first-color), var(--second-color));
+    border-radius: 5px;
+    padding: 15px;
+    display: flex;
+    gap: 3em;
+}
+
+form p {
+    margin-bottom: 10px;
+    text-transform: capitalize;
+    font-size: 15px;
+}
+
+form input {
+    border-radius: 4px;
+    height: 2em;
+    background: transparent;
+    outline: none;
+    border: 2px solid #fff;
+    color: #fff;
+    padding: 5px 15px;
+}
+
+form input::placeholder {
+    padding-top: 5px;
+    text-transform: uppercase;
+}
+
+form input[type="date"] {
+    text-transform: uppercase;
+}
+
+@media(max-width: 720px) {
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    form input {
+        width: 100%;
+    }
+}
+
+/* End Form  */
+
+/* Start Services */
+.services {
+    padding-right: var(--parent-padding);
+    padding-left: var(--parent-padding);
+}
+
+.services .container {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+    gap: 3em;
+}
+
+.services .container .te-mg {
+    flex-basis: 45%;
+}
+
+.services .te-mg img {
+    padding-top: 1em;
+}
+
+.services .cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4em 1em;
+}
+
+.services .cards .card {
+    padding: 35px 10px 15px;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    text-align: center;
+    flex-basis: 45%;
+    position: relative;
+}
+
+.services .cards .card i {
+    padding: 20px;
+    position: absolute;
+    left: 42%;
+    bottom: 4.5em;
+    border-radius: 50%;
+    background-image: linear-gradient(to right, var(--third-color), var(--fourth-color));
+}
+
+.services .cards .card h4 {
+    padding: 5px 0 5px;
+}
+
+.services .cards .card p {
+    font-size: 15px;
+}
+
+@media (max-width: 1199.9px) {
+    .services .container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .services .te-mg img {
+        padding-top: 2em;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .services .cards {
+        justify-content: space-around;
+    }
+}
+
+@media (max-width: 767.8px) {
+    .services .cards {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .services .cards .card i {
+        left: 45%;
+    }
+}
+
+@media (max-width: 331px) {
+    .services .cards {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .services .cards .card i {
+        left: 40%;
+        bottom: 5.5em;
+    }
+
+    .services .cards .card:nth-of-type(1) i {
+        bottom: 5em;
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1400px) {
+    .services .cards .card i {
+        bottom: 5.5em;
+        left: 39%;
+    }
+}
+
+/* End Services */
+
+/* Start Vehicol */
+.vehicle {
+    padding-right: var(--parent-padding);
+    padding-left: var(--parent-padding);
+}
+
+.vehicle .container {
+    padding-bottom: var(--section-padding);
+}
+
+.vehicle .main-heading {
+    text-align: center;
+    margin-bottom: 1.7em;
+}
+
+.vehicle .bmw {
+    justify-content: space-between;
+    padding: 3em;
+    padding-right: 0;
+    background-image: linear-gradient(to right, var(--fifth-color), var(--sixth-color));
+}
+
+@media (max-width: 1199.9px) {
+    .vehicle .bmw {
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    .vehicle .bmw .text {
+        align-self: flex-start;
+    }
+
+    .vehicle .bmw img {
+        width: 100%;
+        max-width: 100%
+    }
+}
+
+.vehicle .bmw .text {
+    align-self: flex-start;
+}
+
+.vehicle .bmw .text h3 {
+    font-size: 2.5em;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.vehicle .bmw .text .starcons {
+    color: yellow;
+}
+
+.vehicle .bmw .text .starcons i {
+    margin-right: 10px;
+    margin-bottom: 20px;
+}
+
+.vehicle .bmw .text ul li {
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.vehicle .bmw .text ul li:nth-of-type(3),
+.bmw li:nth-of-type(4) {
+    text-transform: uppercase;
+}
+
+.vehicle .bmw .text .icon i {
+    font-size: 30px;
+    padding-right: 10px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.vehicle .bmw .text .icon i span {
+    padding-left: 8px;
+    font-size: smaller;
+}
+
+.vehicle .bmw .text .btn {
+    padding: 20px 50px;
+    background: linear-gradient(to right, var(--third-color), var(--fourth-color));
+    text-align: center;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 18px;
+    border-radius: 5px;
+    margin-top: 10px;
+    width: fit-content;
+    box-shadow: inset 0 0 5px black;
+}
+
+/* End Vehicol */
+
+/* Start Rent */
+.rent {
+    padding-right: var(--parent-padding);
+    padding-left: var(--parent-padding);
+}
+
+.rent .container {
+    padding-bottom: var(--section-padding);
+}
+
+.rent .main-heading {
+    text-align: center;
+    margin-bottom: 1.7em;
+}
+
+.rent .cars {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(265px, 1fr));
+    gap: 3em;
+
+}
+
+.rent .cars .car-ds {
+    background-color: var(--card-color);
+    border-radius: 5px;
+    position: relative;
+    padding: 20px;
+    text-align: center;
+}
+
+.rent .cars .car-ds h4 {
+    font-size: 20px;
+    text-transform: capitalize;
+    font-weight: 600;
+}
+
+.rent .cars .car-ds img {
+    max-width: 100%;
+    padding: 35px 0;
+}
+
+.rent .cars .car-ds .date {
+    display: flex;
+    align-self: flex-start;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.rent .cars .car-ds .X-grp {
+    display: flex;
+    gap: 1.5em;
+    text-transform: capitalize;
+    margin: 15px 0;
+}
+
+.rent .cars .car-ds .X-grp span {
+    text-transform: capitalize;
+}
+
+.rent .cars .car-ds .price {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.rent .cars .car-ds .btn {
+    text-transform: capitalize;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 15px 30px;
+    background: linear-gradient(to right, var(--third-color), var(--fourth-color));
+    width: fit-content;
+    margin: auto;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+/* End Rent */
+
+/* Start Brands */
+.brands {
+    padding-right: var(--parent-padding);
+    padding-left: var(--parent-padding);
+}
+
+.brands .container {
+    padding-bottom: var(--section-padding);
+    padding-top: var(--section-padding);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2em;
+}
+
+.brands .container .main-heading {
+    text-align: center;
+}
+
+.brands .container .content {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 575px) {
+    .brands .container .content .brand {
+        flex-basis: 45%;
+    }
+}
+
+@media (max-width: 360px) {
+    .brands .container .content .brand {
+        flex-basis: 100%;
+        height: 50px;
+    }
+}
+
+.brands .brand {
+    display: flex;
+    align-items: center;
+    gap: .8em;
+    text-transform: uppercase;
+    border-radius: 5px;
+    background: linear-gradient(to right, var(--third-color), var(--fourth-color));
+    width: fit-content;
+    padding: 5px 25px;
+}
+
+.brands .brand img {
+    width: 40px;
+}
+
+.brands .brand:nth-of-type(3) img {
+    width: 30px;
+}
+
+.brands .brand:nth-of-type(4) img {
+    width: 25px;
+}
+
+.brands .brand:last-of-type img {
+    width: 20px;
+}
+
+/* End Brands */
+
+/* Start Footer */
+.footer {
+    padding-right: var(--parent-padding);
+    padding-left: var(--parent-padding);
+    background-image: linear-gradient(to right, var(--fifth-color), var(--first-color));
+}
+
+.footer .container {
+    padding-bottom: var(--section-padding);
+    padding-top: var(--section-padding);
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 3em;
+}
+
+.footer .container h3 {
+    font-size: 22px;
+    text-transform: capitalize;
+    padding-bottom: .5em;
+}
+
+.footer .container p,
+ul li {
+    text-transform: capitalize;
+    font-size: 18px;
+}
+
+.footer .rental p {
+    line-height: 1.6;
+}
+
+.footer .rental i {
+    font-size: 30px;
+    padding-right: .6em;
+    padding-right: .6em;
+    padding-top: .6em;
+}
+
+.footer .contact .grp {
+    justify-content: flex-start;
+    gap: .7em;
+    margin-bottom: .7em;
+}
+
+/* End Footer */
